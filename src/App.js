@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  function callAPI(path) {
+    let request = new XMLHttpRequest();
+    request.open("GET", `https://localhost:44375/${path}`);
+    request.send();
+    request.onload = () => {
+      if (request.status === 200) {
+          alert(request.response);
+      } else {
+          alert(`Error: ${request.status} ${request.statusText}`);
+      }
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onclick={callAPI('books')}>Get Books</button>
+      <button onclick={callAPI('authors')}>Get Authors</button>
     </div>
   );
 }
