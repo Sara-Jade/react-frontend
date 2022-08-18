@@ -1,7 +1,9 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+# react-frontend
+- react-frontend is the client for my BFF/API Gateway demo. 
+- [ApiGateway](https://github.com/Sara-Jade/ApiGateway) is the BFF. 
+- [AuthorsService](https://github.com/Sara-Jade/AuthorsService) and [BooksService](https://github.com/Sara-Jade/BooksService) are the microservices.
+- All 4 repos must be run locally to use this frontend in its entirety. However, one of the microservices may be taken down without affecting the functionality of the other.
+ 
 ## Available Scripts
 
 In the project directory, you can run:
