@@ -9,15 +9,13 @@ function App() {
   const path = 'books';
   useEffect(() => {
     fetch(`https://localhost:44375/${path}`)
-    .then(response => response.json())
-    .then(data => setData(data))
-    .catch(error => console.log(error));
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.log(error));
   }, []);
 
   return (
     <div className="App">
-      {/*<button onClick={callAPI('books')}>Get Books</button>
-      <button onClick={callAPI('authors')}>Get Authors</button>*/}
       <p style={{wordBreak: 'break-all'}}>{JSON.stringify(data)}</p>
     </div>
   );
